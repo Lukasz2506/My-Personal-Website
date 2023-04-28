@@ -4,7 +4,6 @@ body {
     font-family: 'Ysabeau', sans-serif;
     font-style: italic;
     font-size: 1em;
-    margin: 0;
 }
 #me > h1 {
     color: #212A3E;
@@ -55,9 +54,6 @@ body {
     color: #B71375;
     font-weight: bold;
 }
-ul {
-    list-style: none;
-}
 .abilities-container {
     display: flex;
     gap: 1rem;
@@ -65,18 +61,16 @@ ul {
     margin: 3% 10% 0 10%;
 }
 .abilities-container > * {
-    flex-direction: column;
     background-color: #F1F6F9;
     text-align: center;
-    min-width: 300px;
-    max-width: 500px;
-    padding-right: 1rem;
     border-radius: 10%;
+    flex-basis: 50%;
 }
-li {
-    line-height: 2rem;
+.abilities-container > * > ul {
+    padding: 0 1rem;
+    margin: 0 auto;
 }
-h3 {
+h3, th {
     font-weight: bold;
     color: #212A3E;
     padding-top: 10px;
@@ -84,9 +78,15 @@ h3 {
 .abilities-container img {
     padding: 3% 10%;
 }
-.role {
+ul {
     font-weight: bold;
-    padding-bottom: 1rem;
+    padding: 1rem 1rem;
+    line-height: 2rem;
+}
+ul > li {
+    font-weight: lighter;
+    line-height: 2.5rem;
+    list-style: none;
 }
 .exception {
     padding-top: 0 !important;
@@ -94,9 +94,7 @@ h3 {
 }
 .it-abilities {
     border-radius: 2%;
-    margin: 3% 5% 0 5%;
     display: flex;
-    justify-content: space-between;
 }
 .ability td p {
     margin-right: 5%;
@@ -114,7 +112,7 @@ h3 {
     gap: 40px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    margin-left: 10%;
+    margin-left: 5%;
 }
 .hobbies > div > p {
     margin-right: 15%;
@@ -134,7 +132,8 @@ button {
     text-align: center;
 }
 button:hover {
-    background-color: #8B1874;
+    background-color: #8d4a7f;
+    
 }
 a {
     text-decoration: none;
@@ -145,38 +144,53 @@ a {
     gap: 20%;
     justify-content: center;
     font-size: 2rem;
-    margin-bottom: 0;
 }
 .social-media > a:hover {
     color: #8B1874;
 }
 @media (max-width: 860px) {
+    
     .container-title {
         flex-direction: column;
         align-items: center;
+    }
+    .container-title > * {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: center;
     }
     .abilities-container {
         flex-direction: column;
         align-items: center;
     }
-    .abilities-container img {
-        min-width: 250px;
-        padding-left: 15%;
+    .abilities-container > * {
+        width: 370px;
     }
     .it-abilities {
         background-color: #F1F6F9;
         flex-direction: column;
         align-items: center;
+        width: 370px;
+        margin-left: 10%;
+        
     }
     .ability {
         margin: 5% auto;
     }
+}
+@media (max-width: 1000px) {
+    .hobbies {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+    }
+}
 @media (max-width: 1200px) {
     .abilities-container {
         flex-wrap: wrap;
-}
-    .abilities-container img {
-        min-width: 250px;
-        padding-left: 15%;
-}
+    }
 }
